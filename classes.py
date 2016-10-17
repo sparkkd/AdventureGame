@@ -1,15 +1,21 @@
 class Room:
     def __init__(self):
         self.exits = {
-            "North" : None,
-            "South" : None,
-            "East" : None,
-            "West" : None
+            "north" : None,
+            "south" : None,
+            "east" : None,
+            "west" : None
             }
 
         self.description = None
 
         self.items = []
+
+    def Has_Exit(self, direction):
+        if self.exits[direction] != None:
+            return True
+        else:
+            return False
 
 class Item:
     def __init__(self):
