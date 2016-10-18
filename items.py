@@ -10,6 +10,8 @@ item_handbook.id = "handbook"
 item_handbook.name = "handbook"
 item_handbook.description = "This student handbook has maps for all over the university."
 
+# location : N4.07
+
 item_reception_keys = Item()
 item_reception_keys.id = "reception keys"
 item_reception_keys.name = "reception keys"
@@ -18,8 +20,8 @@ item_reception_keys.description = "These keys must be for the reception."
 # location : labs
 
 item_projector_bulb = Item()
-item_projector_bulb.id = "projector_bulb"
-item_projector_bulb.name = "projector_bulb"
+item_projector_bulb.id = "projector bulb"
+item_projector_bulb.name = "projector bulb"
 item_projector_bulb.description = "This doesn't seem like a normal light bulb..."
 
 # location : admin, opens reception
