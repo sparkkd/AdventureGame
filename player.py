@@ -1,5 +1,5 @@
-from items import *
+import items
 
 current_room = None
 
-inventory = [item_id, item_handbook]
+inventory = [items.item_id, items.item_handbook]

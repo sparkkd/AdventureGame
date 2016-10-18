@@ -1,8 +1,8 @@
 import player
-from map import rooms
+import map
 
 def Use_ID(self):
-    if player.current_room == rooms["Reception"]:
-        rooms["Reception"].key["east"] = None
+    if player.current_room == map.rooms["Reception"]:
+        map.rooms["Reception"].key["east"] = None
     else:
         print("no")

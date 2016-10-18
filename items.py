@@ -1,7 +1,7 @@
 import types
 
 from classes import Item
-from item_methods import *
+import item_methods
 
 item_id = Item()
 item_id.id = "id"

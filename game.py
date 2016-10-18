@@ -1,8 +1,8 @@
 import player, input_parser
-from map import rooms
+import map
 
 def Game():
-    player.current_room = rooms["N4.07"]
+    player.current_room = map.rooms["N4.07"]
     
     finished = False
     
@@ -34,9 +34,9 @@ def Print_Room_Exits():
     for ex in player.current_room.exits:
         if player.current_room.exits[ex] != None:
             if ex == "up" or ex == "down":
-                print("%s is %s."%(ex.upper(), rooms[player.current_room.exits[ex]].name))
+                print("%s is %s."%(ex.upper(), map.rooms[player.current_room.exits[ex]].name))
             else:
-                print("To the %s is %s."%(ex.upper(), rooms[player.current_room.exits[ex]].name))
+                print("To the %s is %s."%(ex.upper(), map.rooms[player.current_room.exits[ex]].name))
 
 def Print_Room_Items():
     item_names = []
@@ -81,7 +81,7 @@ def Execute_Go(user_input):
     else:
         if player.current_room.Has_Exit(user_input[1]):
             if not player.current_room.key[user_input[1]] != None:
-                player.current_room = rooms[player.current_room.exits[user_input[1]]]
+                player.current_room = map.rooms[player.current_room.exits[user_input[1]]]
             else:
                 print("You try the door, but it's locked.")
         else:

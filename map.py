@@ -1,6 +1,6 @@
 #from items import *
 from classes import Room
-from items import *
+import items
 
 room_reception = Room()
 room_reception.name = "reception"
@@ -8,13 +8,13 @@ room_reception.exits["south"] = "Admins"
 room_reception.exits["east"] = "Labs"
 room_reception.exits["north"] = "Trevithick"
 room_reception.exits["west"] = "Middle staircase"
-room_reception.key["east"] = item_id
+room_reception.key["east"] = items.item_id
 room_reception.description = """You are in a long winding corridor wth a large desk infront of you.
 Next to you is the main reception. behind reception is dark, but you can 
 just about make out a small safe in the corner of the room. The door 
 leading to behind the desk is locked but you see a small scanner next to 
 the handle. Behind you is a dark staircase leading up and down."""
-room_reception.items = [item_exit_keys]
+room_reception.items = [items.item_exit_keys]
 
 room_admins = Room()
 room_admins.name = "Admin's room"
@@ -24,7 +24,7 @@ Next to the door a sign reads, Admins Room. Inside you can see the admins large
 desk. The computer on the desk seems to be on as small green light illuminate the
 smooth wooden surface. The outline of other objects on the desk are barely visable
 in the dark, but you can just about make out a large mug on the desk and a large book."""
-room_admins.items = [item_blank_keycard]
+room_admins.items = [items.item_blank_keycard]
 
 room_trevithick = Room()
 room_trevithick.name = "the Trevithick lecture room"
@@ -32,7 +32,7 @@ room_trevithick.exits["south"] = "Reception"
 room_trevithick.description = """You approach the large wooden double doors of the T2.09 lecture room. You push on 
 the door but it does not budge. The inside is pitch black. A key hole resides on the 
 door."""
-room_trevithick.items = [item_laptop]
+room_trevithick.items = [items.item_laptop]
 
 room_labs = Room()
 room_labs.name = "the computer labs"
@@ -42,7 +42,7 @@ as the wind whistles outside. You can see one of the pannels in the room has bee
 standing upright in the middle of the room, and a small backback resides on the window 
 sill. The door is locked as usual, but you remember that it is opened by a swift swipe 
 of your student ID card on the black censor to the right of the door."""
-room_labs.items = [item_projector_bulb]
+room_labs.items = [items.item_projector_bulb]
 
 room_n407 = Room()
 room_n407.name = "Room N4.07"
@@ -51,7 +51,7 @@ room_n407.description = """In the large lecture theatre, there is just enough li
 controls lie on the desk at the front. The computer is turned off and pieces of paper are 
 still sprawled over the desk. Near the back road is a red backpack, which has been left on 
 one of the chairs."""
-room_n407.items = [item_reception_keys]
+room_n407.items = [items.item_reception_keys]
 
 room_janitor = Room()
 room_janitor.name = "the janitor's room"
@@ -59,7 +59,7 @@ room_janitor.exits["east"] = "Outside"
 room_janitor.description = """The outside is illuminated by the street lights in the steet behind the large bolted gates.
 after walking around you see the only viable way to exit is through the gates, but a thick 
 padlocked chain prevents them from opening."""
-room_janitor.items = [item_trevithick_keys]
+room_janitor.items = [items.item_trevithick_keys]
 
 room_outside = Room()
 room_outside.name = "outside the entrance"
