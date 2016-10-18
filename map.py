@@ -1,5 +1,6 @@
 #from items import *
 from classes import Room
+from items import *
 
 room_reception = Room()
 room_reception.name = "reception"
@@ -12,6 +13,7 @@ Next to you is the main reception. behind reception is dark, but you can
 just about make out a small safe in the corner of the room. The door 
 leading to behind the desk is locked but you see a small scanner next to 
 the handle. Behind you is a dark staircase leading up and down."""
+room_reception.items = []
 
 room_admins = Room()
 room_admins.name = "Admin's room"
