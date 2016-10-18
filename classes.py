@@ -7,6 +7,13 @@ class Room:
             "west" : None
             }
 
+        self.locked = {
+            "north" : False,
+            "south" : False,
+            "east" : False,
+            "west" : False
+            }
+
         self.description = None
 
         self.items = []
