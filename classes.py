@@ -4,14 +4,18 @@ class Room:
             "north" : None,
             "south" : None,
             "east" : None,
-            "west" : None
+            "west" : None,
+            "up" : None,
+            "down" : None
             }
 
         self.key = {
             "north" : None,
             "south" : None,
             "east" : None,
-            "west" : None
+            "west" : None,
+            "up" : None,
+            "down" : None
             }
 
         self.description = None
@@ -26,6 +30,4 @@ class Room:
 
 class Item:
     def __init__(self):
-        self.id = None
         self.name = None
-        self.description = None

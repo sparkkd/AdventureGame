@@ -9,7 +9,8 @@ def Game():
     while not finished:
         Print_Information()
         
-        user_input = Process_Command(input_parser.Parse_Input(input("""What do you do?
+        user_input = Process_Command(input_parser.Parse_Input(input("""
+What do you do?
 
 >>> """)))
 
@@ -26,12 +27,16 @@ def Print_Information():
 def Print_Room_Description():
     print("""%s
 
-%s"""%(player.current_room.name.upper(), player.current_room.description))
+%s
+"""%(player.current_room.name.upper(), player.current_room.description))
 
 def Print_Room_Exits():
     for ex in player.current_room.exits:
         if player.current_room.exits[ex] != None:
-            print("%s is %s."%(ex.upper(), rooms[player.current_room.exits[ex]].name))
+            if ex == "up" or ex == "down":
+                print("%s is %s."%(ex.upper(), rooms[player.current_room.exits[ex]].name))
+            else:
+                print("To the %s is %s."%(ex.upper(), rooms[player.current_room.exits[ex]].name))
 
 def Print_Room_Items():
     item_names = []
@@ -39,7 +44,8 @@ def Print_Room_Items():
     for item in player.current_room.items:
         item_names.append(item.name)
 
-    print("There is %s."%(Join_Items(item_names)))
+    if item_names != []:
+        print("There is %s."%(Join_Items(item_names)))
 
 def Print_Inventory_Items():
     item_names = []
@@ -47,7 +53,8 @@ def Print_Inventory_Items():
     for item in player.inventory:
         item_names.append(item.name)
 
-    print("You have %s."%(Join_Items(item_names)))
+    if item_names != []:
+        print("You have %s."%(Join_Items(item_names)))
 
 def Join_Items(array):
     return ", ".join(array)
