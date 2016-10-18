@@ -4,8 +4,9 @@ from classes import Room
 room_reception = Room()
 room_reception.name = "Reception"
 room_reception.exits["south"] = "Admins"
-room_reception.exits["east"] = "Tutor"
-room_reception.exits["west"] = "Parking"
+room_reception.exits["east"] = "Labs"
+room_reception.exits["north"] = "Trevithick"
+room_reception.exits["west"] = "Middle staircase"
 room_reception.description = """You are in a long winding corridor wth a large desk infront of you.
 Next to you is the main reception. behind reception is dark, but you can 
 just about make out a small safe in the corner of the room. The door 
@@ -23,15 +24,14 @@ in the dark, but you can just about make out a large mug on the desk and a large
 
 room_trevithick = Room()
 room_trevithick.name = "The Trevithick lecture room"
-room_trevithick.exits["west"] = "Reception"
+room_trevithick.exits["south"] = "Reception"
 room_trevithick.description = """You approach the large wooden double doors of the T2.09 lecture room. You push on 
     the door but it does not budge. The inside is pitch black. A key hole resides on the 
     door."""
 
 room_labs = Room()
 room_labs.name = "The computer labs"
-room_labs.exits["south"] = "Reception"
-room_labs.exits["east"] = "Office"
+room_labs.exits["west"] = "Reception"
 room_labs.description = """The labs are quiet and dark. You can see the computers and chairs all sitting still
     as the wind whistles outside. You can see one of the pannels in the room has been left 
     standing upright in the middle of the room, and a small backback resides on the window 
@@ -40,7 +40,7 @@ room_labs.description = """The labs are quiet and dark. You can see the computer
 
 room_n407 = Room()
 room_n407.name = "Room N4.07"
-room_n407.exits["west"] = "Parking"
+room_n407.exits["west"] = "Top staircase"
 room_n407.description = """In the large lecture theatre, there is just enough light to see around. The projector
 controls lie on the desk at the front. The computer is turned off and pieces of paper are 
 still sprawled over the desk. Near the back road is a red backpack, which has been left on 
@@ -48,23 +48,47 @@ one of the chairs."""
 
 room_janitor = Room()
 room_janitor.name = "The janitor's room"
-room_janitor.exits["west"] = "Parking"
+room_janitor.exits["east"] = "Outside"
 room_janitor.description = """The outside is illuminated by the street lights in the steet behind the large bolted gates.
     after walking around you see the only viable way to exit is through the gates, but a thick 
     padlocked chain prevents them from opening."""
 
 room_outside = Room()
 room_outside.name = "Outside the entrance"
-room_outside.exits["west"] = "Parking"
+room_outside.exits["west"] = "Janitor"
+room_outside.exits["south"] = "Entrance"
 room_outside.description = """The janitor's room door is locked shut and won't budge. Through the small fogged up window
     you can see only darkness apart from the light switch on the wall and a large mop in the near 
     corner."""
 
 room_entrance = Room()
 room_entrance.name = "The main entrance"
-room_entrance.exits["west"] = "Parking"
+room_entrance.exits["north"] = "Outside"
+room_entrance.exits["west"] = "Ground staircase"
 room_entrance.description = """The main entrance is a large room slightly illuminated by the small amount of light outside.
     You cannot open the large glass doors."""
+
+room_staircase_top = Room()
+room_staircase_top.name = "The staircase on floor 2"
+room_staircase_top.exits["east"] = "N4.07"
+room_staircase_top.exits["down"] = "Middle staircase"
+room_staircase_top.description = """The top floor, the staircase only leads down."""
+
+room_staircase_middle = Room()
+room_staircase_middle.name = "The staircase on floor 1"
+room_staircase_middle.exits["east"] = "Reception"
+room_staircase_middle.exits["up"] = "Top staircase"
+room_staircase_middle.exits["down"] = "Ground staircase"
+room_staircase_middle.description = """The first floor, the staircase leads up and down"""
+
+room_staircase_ground = Room()
+room_staircase_ground.name = "The staircase on floor 0"
+room_staircase_ground.exits["east"] = "Entrance"
+room_staircase_ground.exits["up"] = "Middle staircase"
+room_staircase_ground.description = """The bottom floor, the staircase only leads up"""
+
+
+
 
 rooms = {
     "Reception": room_reception,
@@ -75,4 +99,7 @@ rooms = {
     "Janitor": room_janitor,
     "Outside": room_outside,
     "Entrance": room_entrance
+    "Top staircase": room_staircase_top
+    "Middle staircase": room_staircase_middle
+    "Ground staircase": room_staircase_ground
 }
