@@ -59,7 +59,7 @@ room_janitor.exits["east"] = "Outside"
 room_janitor.description = """The janitor's room door is locked shut and won't budge. Through the small fogged up window
 you can see only darkness apart from the light switch on the wall and a large mop in the near 
 corner."""
-room_janitor.items = [items.item_trevithick_keys]
+room_janitor.items = [items.item_cutters]
 
 room_outside = Room()
 room_outside.name = "outside the entrance"
