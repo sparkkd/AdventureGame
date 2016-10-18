@@ -23,7 +23,7 @@ def Print_Information():
 def Print_Room_Description():
     print("""%s
 
-%s"""%(player.current_room["name"].upper(), player.current_room["description"]))
+%s"""%(player.current_room.name.upper(), player.current_room.description))
 
 def Process_Command(user_input):
     # process user input using parser module
@@ -44,7 +44,7 @@ def Execute_Go(user_input):
         print("Go where?")
     else:
         if player.current_room.Has_Exit(user_input[1]):
-            player.current_room = player.current_room.exits[user_input[1]]
+            player.current_room = rooms[player.current_room.exits[user_input[1]]]
         else:
             print("You cannot go there!")
 
