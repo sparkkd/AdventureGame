@@ -33,16 +33,14 @@ def Print_Room_Exits():
             print("%s is %s."%(ex.upper(), rooms[player.current_room.exits[ex]].name))
 
 def Process_Command(user_input):
-    # process user input using parser module
-
     # call correct function
     
     if user_input[0] in ["go", "move"]:
         Execute_Go(user_input)
     elif user_input[0] in ["drop"]:
-        "drop item"
+        Execute_Drop(user_input)
     elif user_input[0] in ["take"]:
-        "take item"
+        Execute_Take(user_input)
     else:
         print("You can't do that!")
 
@@ -58,11 +56,37 @@ def Execute_Go(user_input):
         else:
             print("You cannot go there!")
 
-def Execute_Drop():
-    pass
+def Execute_Drop(user_input):
+    if len(user_input) <= 1:
+        print("Drop what?")
+    else:
+        found = False
+        
+        for item in player.inventory:
+            if item.id == user_input[1]:
+                found = True
 
-def Execute_Take():
-    pass
+                player.current_room.items.append(item)
+                player.inventory.remove(item)
+
+        if not found:
+            print("You can't drop that!")
+
+def Execute_Take(user_input):
+    if len(user_input) <= 1:
+        print("Take what?")
+    else:
+        found = False
+        
+        for item in player.current_room.items:
+            if item.id == user_input[1]:
+                found = True
+
+                player.inventory.append(item)
+                player.current_room.items.remove(item)
+
+        if not found:
+            print("You can't take that!")
 
 if __name__ == "__main__":
     Game()
