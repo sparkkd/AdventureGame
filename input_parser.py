@@ -1,3 +1,5 @@
+words_to_remove = []
+
 def Parse_Input(user_input):
     output = ""
 
@@ -7,5 +9,13 @@ def Parse_Input(user_input):
 
     while "  " in output:
         output.replace("  ", "")
+
+    output = output.strip().lower().split(" ")
+
+    filtered = []
+
+    for word in output:
+        if word not in words_to_remove:
+            filtered.append(word)
     
-    return output.strip().lower().split(" ")
+    return filtered
