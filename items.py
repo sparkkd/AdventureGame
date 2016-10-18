@@ -1,14 +1,15 @@
+import types
+
 from classes import Item
-from map import rooms
 from item_methods import *
 
 item_id = Item()
 item_id.id = "id"
 item_id.name = "id"
 item_id.description = "Your ID is one of the few things that you've already got on you. Let's hope it comes in handy!"
-item_id.room_used_in = rooms["Reception"]
+item_id.room_used_in = "Reception"
 item_id.used_text = "You swipe your ID. The computer labs is now open."
-item_id.Use_Item = Use_ID()
+item_id.Use_Item = types.MethodType(Use_ID, item_id)
 
 item_handbook = Item()
 item_handbook.id = "handbook"

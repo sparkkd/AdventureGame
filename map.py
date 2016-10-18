@@ -8,12 +8,13 @@ room_reception.exits["south"] = "Admins"
 room_reception.exits["east"] = "Labs"
 room_reception.exits["north"] = "Trevithick"
 room_reception.exits["west"] = "Middle staircase"
+room_reception.key["east"] = item_id
 room_reception.description = """You are in a long winding corridor wth a large desk infront of you.
 Next to you is the main reception. behind reception is dark, but you can 
 just about make out a small safe in the corner of the room. The door 
 leading to behind the desk is locked but you see a small scanner next to 
 the handle. Behind you is a dark staircase leading up and down."""
-room_reception.items = [item_trevithick_keys, item_exit_keys]
+room_reception.items = [item_exit_keys]
 
 room_admins = Room()
 room_admins.name = "Admin's room"
@@ -93,9 +94,6 @@ room_staircase_ground.name = "the staircase on Floor 0"
 room_staircase_ground.exits["east"] = "Entrance"
 room_staircase_ground.exits["up"] = "Middle staircase"
 room_staircase_ground.description = """The bottom floor, the staircase only leads up."""
-
-
-
 
 rooms = {
     "Reception": room_reception,
