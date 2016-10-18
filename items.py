@@ -17,6 +17,7 @@ item_handbook = Item()
 item_handbook.id = "handbook"
 item_handbook.name = "handbook"
 item_handbook.description = "This student handbook has maps for all over the university."
+item_handbook.used_text = ""
 
 
 # location : N4.07, opens safe in reception
