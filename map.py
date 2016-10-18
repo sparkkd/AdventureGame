@@ -10,18 +10,18 @@ room_reception.exits["north"] = "Trevithick"
 room_reception.exits["west"] = "Middle staircase"
 room_reception.key["east"] = items.item_id
 room_reception.description = """You are in a long winding corridor wth a large desk infront of you.
-Next to you is the main reception. behind reception is dark, but you can 
+Next to you is the main reception. Behind reception is dark, but you can 
 just about make out a small safe in the corner of the room. The door 
 leading to behind the desk is locked but you see a small scanner next to 
 the handle. Behind you is a dark staircase leading up and down."""
 room_reception.items = [items.item_exit_keys]
 
 room_admins = Room()
-room_admins.name = "Admin's room"
+room_admins.name = "Admins room"
 room_admins.exits["north"] = "Reception"
-room_admins.description = """You come to a small green door with a samll circular window near the top. 
-Next to the door a sign reads, Admins Room. Inside you can see the admins large
-desk. The computer on the desk seems to be on as small green light illuminate the
+room_admins.description = """You come to a small green door with a small circular window near the top. 
+Next to the door a sign reads "Admins Room". Inside you can see the admins large
+desk. The computer on the desk seems to be on as a small green light illuminates the
 smooth wooden surface. The outline of other objects on the desk are barely visable
 in the dark, but you can just about make out a large mug on the desk and a large book."""
 room_admins.items = [items.item_blank_keycard]
@@ -39,9 +39,9 @@ room_labs.name = "the computer labs"
 room_labs.exits["west"] = "Reception"
 room_labs.description = """The labs are quiet and dark. You can see the computers and chairs all sitting still
 as the wind whistles outside. You can see one of the pannels in the room has been left 
-standing upright in the middle of the room, and a small backback resides on the window 
+standing upright in the middle of the room, and a small backpack resides on the window 
 sill. The door is locked as usual, but you remember that it is opened by a swift swipe 
-of your student ID card on the black censor to the right of the door."""
+of your student ID card on the black sensor to the left of the door."""
 room_labs.items = [items.item_projector_bulb]
 
 room_n407 = Room()
@@ -56,18 +56,18 @@ room_n407.items = [items.item_reception_keys]
 room_janitor = Room()
 room_janitor.name = "the janitor's room"
 room_janitor.exits["east"] = "Outside"
-room_janitor.description = """The outside is illuminated by the street lights in the steet behind the large bolted gates.
-after walking around you see the only viable way to exit is through the gates, but a thick 
-padlocked chain prevents them from opening."""
+room_janitor.description = """The janitor's room door is locked shut and won't budge. Through the small fogged up window
+you can see only darkness apart from the light switch on the wall and a large mop in the near 
+corner."""
 room_janitor.items = [items.item_trevithick_keys]
 
 room_outside = Room()
 room_outside.name = "outside the entrance"
 room_outside.exits["west"] = "Janitor"
 room_outside.exits["south"] = "Entrance"
-room_outside.description = """The janitor's room door is locked shut and won't budge. Through the small fogged up window
-you can see only darkness apart from the light switch on the wall and a large mop in the near 
-corner."""
+room_outside.description = """The outside is illuminated by the street lights in the street behind the large bolted gates.
+After walking around you see the only viable way to exit is through the gates, but a thick 
+padlocked chain prevents them from opening."""
 
 room_entrance = Room()
 room_entrance.name = "the main entrance"
