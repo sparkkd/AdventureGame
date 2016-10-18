@@ -31,3 +31,8 @@ class Room:
 class Item:
     def __init__(self):
         self.name = None
+        self.id = None
+        self.description = None
+
+    def Use_Item(self):
+        raise NotImplementedError
