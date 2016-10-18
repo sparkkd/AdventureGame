@@ -1,83 +1,65 @@
-item_id = {
-    "id": "id",
+from classes import Item
 
-    "name": "id",
+item_id = Item()
+item_id.id = "id"
+item_id.name = "id"
+item_id.description = "Your ID is one of the few things that you've already got on you. Let's hope it comes in handy!"
 
-    "description":
-    """Your ID is one of the few things that you've already got on you. 
-    Let's hope it comes in handy!"""
-}
+item_handbook = Item()
+item_handbook.id = "handbook"
+item_handbook.name = "handbook"
+item_handbook.description = "This student handbook has maps for all over the university."
 
-item_handbook = {
-    "id": "handbook",
-    
-    "name": "handbook",
+# location : N4.07
 
-    "description": "This student handbook has maps for all over the univeristy."
-}
-#location: N4.07
-item_broken_projector = {
-    "id": "broken projector",
+item_broken_projector = Item()
+item_broken_projector.id = "broken projector"
+item_broken_projector.name = "broken projector"
+item_broken_projector.description = "The projector was working before. Something must have blown."
 
-    "name": "broken projector",
+item_reception_keys = Item()
+item_reception_keys.id = "reception keys"
+item_reception_keys.name = "reception keys"
+item_reception_keys.description = "These keys must be for the reception."
 
-    "description":
-    """The projector was working before. Something must have blown."""
-}
+# location : labs
 
-item_reception_keys = {
-    "id": "reception keys",
+item_projector = Item()
+item_projector.id = "projector"
+item_projector.name = "projector"
+item_projector.description = "Could this projector help fix the other one?"
 
-    "name": "reception keys",
+# location : admin, opens reception
 
-    "description":
-    "These keys must be for the reception."
-}
-#location:labs
-item_projector = {
-    "id": "projector",
+item_blank_keycard = Item()
+item_blank_keycard.id = "blank keycard"
+item_blank_keycard.name = "a blank keycard"
+item_blank_keycard.description = "This key must open one of the surrounding rooms."
 
-    "name": "projector",
+# location : reception
 
-    "description": "Could this projector help fix the other one?"
-}
-#location:admin, opens reception
-item_blank_keycard = {
-    "id": "blank keycard",
-    
-    "name": "a blank keycard",
+item_trevithick_keys = Item()
+item_trevithick_keys.id = "trevithick keys"
+item_trevithick_keys.name = "trevithick keys"
+item_trevithick_keys.description = "There could be something of use in Trevithick."
 
-    "description": "This key must open one of the surrounding rooms."
-}
-#location: Reception
-item_trevithick_keys = {
-    "id": "trevithick keys"
+# location : reception
 
-    "name": "trevithick keys"
+item_exit_keys = Item()
+item_exit_keys.id = "exit keys"
+item_exit_keys.name = "exit keys"
+item_exit_keys.description = "Finally, the keys for the exit."
 
-    "description": "There could be something of use in Trevithick."
-}
-#location:reception 
-item_exit_keys = {
-    "id": "exit keys"
+# location : trevithick
 
-    "name": "exit keys"
+item_laptop = Item()
+item_laptop.id = "laptop"
+item_laptop.name = "laptop"
+item_laptop.description = "There's something flashing on the screen."
 
-    "description": "Finally, the keys for the exit."
-}
-#location: Trevithick 
-item_laptop = {
-    "id": "laptop"
+# location : janitor's shed
 
-    "name": "laptop"
-
-    "description": "There's something flashing on the screen."
-}
-#location: janitor's shed 
-item_trevithick_keys = {
-    "id": "bolt cutters"
-
-    "name": "bolt cutters"
-
-    "description": "There's no key in site to unlock the gate. These will have to do."
-}
+item_trevithick_keys = Item()
+item_trevithick_keys.id = "bolt cutters"
+item_trevithick_keys.name = "bolt cutters"
+item_trevithick_keys.description = "There's no key in site to unlock the gate. These will have to do."

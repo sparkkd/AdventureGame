@@ -4,14 +4,18 @@ class Room:
             "north" : None,
             "south" : None,
             "east" : None,
-            "west" : None
+            "west" : None,
+            "up" : None,
+            "down" : None
             }
 
-        self.locked = {
-            "north" : False,
-            "south" : False,
-            "east" : False,
-            "west" : False
+        self.key = {
+            "north" : None,
+            "south" : None,
+            "east" : None,
+            "west" : None,
+            "up" : None,
+            "down" : None
             }
 
         self.description = None
@@ -27,3 +31,8 @@ class Room:
 class Item:
     def __init__(self):
         self.name = None
+        self.id = None
+        self.description = None
+
+    def Use_Item(self):
+        raise NotImplementedError
