@@ -34,5 +34,8 @@ class Item:
         self.id = None
         self.description = None
 
+        self.room_used_in = None
+        self.used_text = None
+
     def Use_Item(self):
         raise NotImplementedError

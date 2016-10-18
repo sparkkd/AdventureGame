@@ -68,6 +68,8 @@ def Process_Command(user_input):
         Execute_Drop(user_input)
     elif user_input[0] in ["take"]:
         Execute_Take(user_input)
+    elif user_input[0] in ["use"]:
+        Execute_Use(user_input)
     else:
         print("You can't do that!")
 
@@ -119,6 +121,23 @@ def Execute_Take(user_input):
 
         if not found:
             print("You can't take that!")
+
+def Execute_Use(user_input):
+    if len(user_input) <= 1:
+        print("Use what?")
+    else:
+        user_input = " ".join(user_input[1:])
+
+        found = False
+
+        for item in player.inventory:
+            if item.id == user_input:
+                found = True
+
+                item.Use_Item()
+
+        if not found:
+            print("You can't use that.")
 
 if __name__ == "__main__":
     Game()

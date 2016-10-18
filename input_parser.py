@@ -1,4 +1,4 @@
-words_to_remove = []
+words_to_remove = ["at", "please"]
 
 def Parse_Input(user_input):
     output = ""
