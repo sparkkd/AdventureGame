@@ -87,10 +87,12 @@ def Execute_Drop(user_input):
     if len(user_input) <= 1:
         print("Drop what?")
     else:
+        user_input = " ".join(user_input[1:])
+        
         found = False
         
         for item in player.inventory:
-            if item.id == user_input[1]:
+            if item.id == user_input:
                 found = True
 
                 player.current_room.items.append(item)
@@ -103,10 +105,13 @@ def Execute_Take(user_input):
     if len(user_input) <= 1:
         print("Take what?")
     else:
+        user_input = " ".join(user_input[1:])
+        
         found = False
         
         for item in player.current_room.items:
-            if item.id == user_input[1]:
+            
+            if item.id == user_input:
                 found = True
 
                 player.inventory.append(item)
