@@ -1,7 +1,8 @@
 import player, input_parser, game_map
+from map import rooms
 
 def Game():
-    player.current_room = game_map.start_room
+    player.current_room = rooms["N4.07"]
     
     finished = False
     
@@ -14,9 +15,15 @@ def Game():
 
 def Print_Information():
     # print room description
+    Print_Room_Description()
 
     # print room items
     pass
+
+def Print_Room_Description():
+    print("""%s
+
+%s"""%(player.current_room["name"].upper(), player.current_room["description"]))
 
 def Process_Command(user_input):
     # process user input using parser module

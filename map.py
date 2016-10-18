@@ -1,4 +1,4 @@
-from items import *
+#from items import *
 
 room_reception = {
     "name": "Reception",
@@ -10,7 +10,7 @@ room_reception = {
     leading to behind the desk is locked but you see a small scanner next to 
     the handle. Behind you is a dark staircase leading up and down.""",
 
-    "exits": {"south": "Admins", "east": "Tutor", "west": "Parking", "up": "Entrance", "down:"},
+    "exits": {"south": "Admins", "east": "Tutor", "west": "Parking", "up": "Entrance", "down" : ""},
 
     "items": []
 }
@@ -115,8 +115,8 @@ rooms = {
     "Admins": room_admins,
     "Trevithick": room_trevithick,
     "Labs": room_labs,
-    "N4.07": room_n407
-    "Janitor": room_janitor
-    "Outside": room_outside
+    "N4.07": room_n407,
+    "Janitor": room_janitor,
+    "Outside": room_outside,
     "Entrance": room_entrance
 }
