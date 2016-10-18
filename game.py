@@ -70,6 +70,8 @@ def Process_Command(user_input):
         Execute_Take(user_input)
     elif user_input[0] in ["use"]:
         Execute_Use(user_input)
+    elif user_input[0] in ["look"]:
+        Execute_Look(user_input)
     else:
         print("You can't do that!")
 
@@ -138,6 +140,23 @@ def Execute_Use(user_input):
 
         if not found:
             print("You can't use that.")
+
+def Execute_Look(user_input):
+    if len(user_input) <= 1:
+        print("Look at what?")
+    else:
+        user_input = " ".join(user_input[1:])
+
+        found = False
+
+        for item in player.inventory:
+            if item.id == user_input:
+                found = True
+
+                print(item.description)
+
+        if not found:
+            print("You can't look at that.")
 
 if __name__ == "__main__":
     Game()
