@@ -41,7 +41,7 @@ as the wind whistles outside. You can see one of the pannels in the room has bee
 standing upright in the middle of the room, and a small backback resides on the window 
 sill. The door is locked as usual, but you remember that it is opened by a swift swipe 
 of your student ID card on the black censor to the right of the door."""
-room_labs.items = [item_projector]
+room_labs.items = [item_projector_bulb]
 
 room_n407 = Room()
 room_n407.name = "Room N4.07"
@@ -50,7 +50,7 @@ room_n407.description = """In the large lecture theatre, there is just enough li
 controls lie on the desk at the front. The computer is turned off and pieces of paper are 
 still sprawled over the desk. Near the back road is a red backpack, which has been left on 
 one of the chairs."""
-room_n407.items = [item_broken_projector, item_reception_keys]
+room_n407.items = [item_reception_keys]
 
 room_janitor = Room()
 room_janitor.name = "the janitor's room"
