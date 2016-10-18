@@ -19,8 +19,9 @@ def Print_Information():
 
     Print_Room_Exits()
 
-    # print room items
-    pass
+    Print_Room_Items()
+
+    Print_Inventory_Items()
 
 def Print_Room_Description():
     print("""%s
@@ -31,6 +32,25 @@ def Print_Room_Exits():
     for ex in player.current_room.exits:
         if player.current_room.exits[ex] != None:
             print("%s is %s."%(ex.upper(), rooms[player.current_room.exits[ex]].name))
+
+def Print_Room_Items():
+    item_names = []
+
+    for item in player.current_room.items:
+        item_names.append(item.name)
+
+    print("There is %s."%(Join_Items(item_names)))
+
+def Print_Inventory_Items():
+    item_names = []
+
+    for item in player.inventory:
+        item_names.append(item.name)
+
+    print("You have %s."%(Join_Items(item_names)))
+
+def Join_Items(array):
+    return ", ".join(array)
 
 def Process_Command(user_input):
     # call correct function
