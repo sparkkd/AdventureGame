@@ -44,7 +44,10 @@ def Execute_Go(user_input):
         print("Go where?")
     else:
         if player.current_room.Has_Exit(user_input[1]):
-            player.current_room = rooms[player.current_room.exits[user_input[1]]]
+            if not player.current_room.locked[user_input[1]]:
+                player.current_room = rooms[player.current_room.exits[user_input[1]]]
+            else:
+                print("You try the door, but it's locked.")
         else:
             print("You cannot go there!")
 
