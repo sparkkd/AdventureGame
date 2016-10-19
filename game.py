@@ -1,5 +1,6 @@
 import player, input_parser
 import map
+import os
 
 #Start of the game
 def Game():
@@ -25,6 +26,8 @@ What do you do?
                     
 # print room description
 def Print_Information():
+    os.system("cls" if os.name == "nt" else "clear")
+    
     Print_Room_Description()
 
     Print_Room_Exits()
