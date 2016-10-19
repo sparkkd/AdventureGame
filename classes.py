@@ -9,13 +9,13 @@ class Room:
             "down" : None
             }
 
-        self.key = {
-            "north" : None,
-            "south" : None,
-            "east" : None,
-            "west" : None,
-            "up" : None,
-            "down" : None
+        self.locked = {
+            "north" : False,
+            "south" : False,
+            "east" : False,
+            "west" : False,
+            "up" : False,
+            "down" : False
             }
 
         self.description = None

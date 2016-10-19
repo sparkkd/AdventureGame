@@ -1,6 +1,7 @@
 import player, input_parser
 import map
 
+#Start of the game
 def Game():
     player.current_room = map.rooms["N4.07"]
     
@@ -14,8 +15,16 @@ What do you do?
 
 >>> """)))
 
+        print()
+
+#finishes game
+        for item in player.inventory:
+            if item.name == "bolt cutters":
+                if item.used:
+                    finished = True
+                    
+# print room description
 def Print_Information():
-    # print room description
     Print_Room_Description()
 
     Print_Room_Exits()
@@ -24,12 +33,14 @@ def Print_Information():
 
     Print_Inventory_Items()
 
+#prints the room name and description
 def Print_Room_Description():
     print("""%s
 
 %s
 """%(player.current_room.name.upper(), player.current_room.description))
 
+#prints the avaliable exits from each room
 def Print_Room_Exits():
     for ex in player.current_room.exits:
         if player.current_room.exits[ex] != None:
@@ -38,6 +49,7 @@ def Print_Room_Exits():
             else:
                 print("To the %s is %s."%(ex.upper(), map.rooms[player.current_room.exits[ex]].name))
 
+#prints the items that are in the room
 def Print_Room_Items():
     item_names = []
 
@@ -47,6 +59,7 @@ def Print_Room_Items():
     if item_names != []:
         print("There is %s."%(Join_Items(item_names)))
 
+#prints items that are in the players inventory
 def Print_Inventory_Items():
     item_names = []
 
@@ -56,6 +69,7 @@ def Print_Inventory_Items():
     if item_names != []:
         print("You have %s."%(Join_Items(item_names)))
 
+#makes a list of items in the players inventory to print
 def Join_Items(array):
     return ", ".join(array)
 
@@ -75,18 +89,20 @@ def Process_Command(user_input):
     else:
         print("You can't do that!")
 
+#allows the player to go from room to room
 def Execute_Go(user_input):
     if len(user_input) <= 1:
         print("Go where?")
     else:
         if player.current_room.Has_Exit(user_input[1]):
-            if not player.current_room.key[user_input[1]] != None:
+            if not player.current_room.locked[user_input[1]]:
                 player.current_room = map.rooms[player.current_room.exits[user_input[1]]]
             else:
                 print("You try the door, but it's locked.")
         else:
             print("You cannot go there!")
 
+#Allows the player to drop items
 def Execute_Drop(user_input):
     if len(user_input) <= 1:
         print("Drop what?")
@@ -105,6 +121,7 @@ def Execute_Drop(user_input):
         if not found:
             print("You can't drop that!")
 
+#Allows the player to take items
 def Execute_Take(user_input):
     if len(user_input) <= 1:
         print("Take what?")
@@ -124,6 +141,7 @@ def Execute_Take(user_input):
         if not found:
             print("You can't take that!")
 
+#allows the player to use items to unlock doors
 def Execute_Use(user_input):
     if len(user_input) <= 1:
         print("Use what?")
@@ -136,11 +154,12 @@ def Execute_Use(user_input):
             if item.id == user_input:
                 found = True
 
-                item.Use_Item()
+                item.Use_Item(player.current_room, player.inventory)
 
         if not found:
             print("You can't use that.")
 
+#Allows the player to look at items in the inventory
 def Execute_Look(user_input):
     if len(user_input) <= 1:
         print("Look at what?")
@@ -157,6 +176,5 @@ def Execute_Look(user_input):
 
         if not found:
             print("You can't look at that.")
-
 if __name__ == "__main__":
     Game()
