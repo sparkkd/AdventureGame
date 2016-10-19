@@ -88,6 +88,7 @@ class Item_Projector_Bulb(Item):
             print(self.used_text)
             inventory.remove(self)
             inventory.append(Item_Reception_Safe_Keys())
+            current_room.description = "The projector bulb fits! The projector produced a concentrated light that hits the large screen. On the screen, in the bottom right corner you notice a 5 digit code reading 81889."
         else:
             print("No, you cannot light up the bulb with sheer willpower. Nice try, though.")
 
@@ -150,6 +151,7 @@ class Item_Exit_Keys(Item):
         if current_room.name.lower() == self.room_used_in and current_room.locked["north"] != False:
             print(self.used_text)
             current_room.locked["north"] = False
+            current_room.description = "The key fits! With a swift turn to the left the door finnaly budges and you feel the cold as the wind blows in form outside."
         else:
             print("Jingle jingle. You hear that? That's the sound of freedom.")
 
@@ -193,6 +195,7 @@ class Item_Cutters(Item):
             print(self.used_text)
             inventory.append(Item_Reception_Safe_Location())
             self.used = True
+            current_room.description = "The bolt cutters easily break the chain around the gate. The gate is now open!!"
         else:
             print("Clip clip. Clip clip.")
 
