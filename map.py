@@ -4,9 +4,13 @@ import items
 
 # Declaring Reception as a Room object. 
 room_reception = Room()
+<<<<<<< HEAD
 
 # Reception's name, valid exists, locked rooms, description, and items.
 room_reception.name = "reception"
+=======
+room_reception.name = "Reception"
+>>>>>>> 937f3b1ea8d01b93a9277f98aa6127741340afdf
 room_reception.exits["east"] = "Labs"
 room_reception.exits["north"] = "Trevithick"
 room_reception.exits["west"] = "Middle staircase"
@@ -25,7 +29,7 @@ room_admins.exits["east"] = "Middle staircase"
 room_admins.description = """You come to a small green door with a small circular window near the top. 
 Next to the door a sign reads "Admins Room". Inside you can see the admins large
 desk. The computer on the desk seems to be on as a small green light illuminates the
-smooth wooden surface. in the top draw of the desk there is a blank keycard. What is this for?"""
+smooth wooden surface. In the top draw of the desk there's a blank keycard. What could this be for?"""
 room_admins.items = [items.Item_Blank_Keycard()]
 
 # Declaring trevithick as a Room object. 
