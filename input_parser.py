@@ -8,6 +8,7 @@ words_to_remove = ['at', 'please', 'a', 'about', 'all', 'an', 'another', 'any', 
               'towards', 'until', 'us', 'want', 'we', 'what', 'when', 'why',
               'wish', 'with', 'would']
 
+#This function takes the user input, filter it then return it.
 def Parse_Input(user_input):
     output = ""
 
