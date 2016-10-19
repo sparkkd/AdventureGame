@@ -11,8 +11,8 @@ room_reception.exits["north"] = "Trevithick"
 room_reception.exits["west"] = "Middle staircase"
 room_reception.locked["east"] = True
 room_reception.locked["north"] = True
-room_reception.description = """You are in a long winding corridor wth a large desk infront of you.
-Next to you is the main reception. Behind reception is dark. You can't see much apart from files and
+room_reception.description = """You are in a long winding corridor with a large desk in front of you.
+Next to you is the main reception. Behind reception desk it is dark. You can't see much apart from files and
 records. There must be something in here that is useful."""
 room_reception.items = [items.Item_Trevithick_Keys()]
 
@@ -22,7 +22,7 @@ room_admins = Room()
 room_admins.name = "Admins room"
 room_admins.exits["east"] = "Middle staircase"
 room_admins.description = """You come to a small green door with a small circular window near the top. 
-Next to the door a sign reads "Admins Room". Inside you can see the admins large
+Next to the door a sign reads "Admins Room". Inside you can see a large
 desk. The computer on the desk seems to be on as a small green light illuminates the
 smooth wooden surface. In the top draw of the desk there's a blank keycard. What could this be for?"""
 room_admins.items = [items.Item_Blank_Keycard()]
@@ -32,7 +32,7 @@ room_trevithick = Room()
 #trevithick' name, valid exists, description, and items.
 room_trevithick.name = "the Trevithick lecture room"
 room_trevithick.exits["south"] = "Reception"
-room_trevithick.description = """Inside the trevithick theatre is just how you remember it.
+room_trevithick.description = """Inside the Trevithick theatre is just how you remember it.
 you notice there is a small laptop at the back of the room on one of the desks.
 Why is that here?"""
 room_trevithick.items = [items.Item_Laptop()]
@@ -42,9 +42,9 @@ room_labs = Room()
 #Labs' name, valid exists, description, and items.
 room_labs.name = "the computer labs"
 room_labs.exits["west"] = "Reception"
-room_labs.description = """The labs are quiet and dark. You can see the computers and chairs all sitting still
+room_labs.description = """The labs are quiet and dark. You can see the eerie outline of the computers and chairs all sitting still
 as the wind whistles outside. One of the pannels in the room has been left standing upright
-in the middle of the room, and a small backpack resides on the window sill. You also notice a small box with a
+in the middle of the room, and a small backpack sits on the window sill. You also notice a small box with a
 bulb on top of it"""
 room_labs.items = [items.Item_Projector_Bulb()]
 
@@ -55,7 +55,7 @@ room_n407.name = "Room N4.07"
 room_n407.exits["west"] = "Top staircase"
 room_n407.description = """In the large lecture theatre, there is just enough light to see around. The projector
 controls lie on the desk at the front. The computer is turned off and pieces of paper are 
-still sprawled over the desk. Near the back road is a red backpack, which has been left on 
+still sprawled over the desk. Near the back row is a red backpack, which has been left on 
 one of the chairs."""
 
 #Declaring janitor as a Room object.
@@ -64,7 +64,7 @@ room_janitor = Room()
 room_janitor.name = "the janitor's room"
 room_janitor.exits["east"] = "Outside"
 room_janitor.description = """The janitor's shed is old and dirty. You manage to squeeze in through the small rusted
-door. You see many different tools and materials, but your eye is caught by a pair of large iron bolt cutters. These
+door. You see many different tools and materials, but your eye is caught by a pair of large, iron bolt cutters. These
 might be useful."""
 room_janitor.items = [items.Item_Cutters()]
 
@@ -85,7 +85,7 @@ room_entrance.name = "the main entrance"
 room_entrance.exits["north"] = "Outside"
 room_entrance.exits["west"] = "Ground staircase"
 room_entrance.locked["north"] = True
-room_entrance.description = """The main entrance is a large room slightly illuminated by the small amount of light outside.
+room_entrance.description = """The main entrance is a large room slightly illuminated by the small amount of light filtering in from outside.
 You cannot open the large glass doors."""
 
 #Declaring top staircase as a Room object.
