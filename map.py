@@ -3,7 +3,7 @@ from classes import Room
 import items
 
 room_reception = Room()
-room_reception.name = "reception"
+room_reception.name = "Reception"
 room_reception.exits["east"] = "Labs"
 room_reception.exits["north"] = "Trevithick"
 room_reception.exits["west"] = "Middle staircase"
