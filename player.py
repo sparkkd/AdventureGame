@@ -2,4 +2,4 @@ import items
 
 current_room = None
 
-inventory = [items.item_id, items.item_handbook]
+inventory = [items.Item_ID(), items.Item_Handbook()]

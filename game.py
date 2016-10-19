@@ -14,6 +14,13 @@ What do you do?
 
 >>> """)))
 
+        print()
+
+        for item in player.inventory:
+            if item.name == "bolt cutters":
+                if item.used:
+                    finished = True
+
 def Print_Information():
     # print room description
     Print_Room_Description()
@@ -80,7 +87,7 @@ def Execute_Go(user_input):
         print("Go where?")
     else:
         if player.current_room.Has_Exit(user_input[1]):
-            if not player.current_room.key[user_input[1]] != None:
+            if not player.current_room.locked[user_input[1]]:
                 player.current_room = map.rooms[player.current_room.exits[user_input[1]]]
             else:
                 print("You try the door, but it's locked.")
@@ -136,7 +143,7 @@ def Execute_Use(user_input):
             if item.id == user_input:
                 found = True
 
-                item.Use_Item()
+                item.Use_Item(player.current_room, player.inventory)
 
         if not found:
             print("You can't use that.")
