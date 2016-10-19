@@ -1,7 +1,6 @@
 import types
 
 from classes import Item
-from item_methods import *
 import player
 
 # location : player, opens labs

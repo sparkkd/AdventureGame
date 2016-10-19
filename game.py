@@ -176,6 +176,5 @@ def Execute_Look(user_input):
 
         if not found:
             print("You can't look at that.")
-s
 if __name__ == "__main__":
     Game()
