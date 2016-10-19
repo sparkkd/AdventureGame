@@ -142,7 +142,7 @@ class Item_Trevithick_Keys(Item):
         self.used_text = "You open the Trevithick lecture theatre. Sweet!"
         self.room_used_in = "reception"
         
-    #This function occures when the trevithick keys is being used by the player.
+    #This function occurs when the trevithick keys is being used by the player.
     def Use_Item(self, current_room = None, inventory = None):
         if current_room.name.lower() == self.room_used_in and current_room.locked["north"] != False:
             print(self.used_text)
@@ -166,7 +166,7 @@ class Item_Exit_Keys(Item):
         self.used_text = "You unlock the entrance door."
         self.room_used_in = "the main entrance"
         
-    #This function occures when the exit keys is being used by the player.
+    #This function occurs when the exit keys is being used by the player.
     def Use_Item(self, current_room = None, inventory = None):
         if current_room.name.lower() == self.room_used_in and current_room.locked["north"] != False:
             print(self.used_text)
@@ -190,7 +190,7 @@ class Item_Laptop(Item):
 
         self.used_text = "You look at the laptop. It shows the location of a hidden safe in reception. Not very secure, is it?"
 
-    #This function occures when the laptop is being used by the player.
+    #This function occurs when the laptop is being used by the player.
     def Use_Item(self, current_room = None, inventory = None):
         if Item_Reception_Safe_Location not in inventory:
             print(self.used_text)
@@ -215,7 +215,7 @@ class Item_Cutters(Item):
         self.room_used_in = "outside the entrance"
         self.used = False
         
-    #This function occures when the bolt cutters is being used by the player.
+    #This function occurs when the bolt cutters is being used by the player.
     def Use_Item(self, current_room = None, inventory = None):
         if current_room.name.lower() == self.room_used_in:
             print(self.used_text)
@@ -237,3 +237,21 @@ class Item_Reception_Safe_Location(Item):
 
     def Use_Item(self, current_room = None, inventory = None):
         print("You admire your artistry. On second thoughts, it's not that impressive.")
+
+# location : random locations in the map
+
+class Item_Cookie(Item):
+
+    #This is a constructor that initializes the object (Cookie) for the Item_Cookie class.
+    def __init__(self):
+        Item.__init__(self)
+
+        self.id = "cookie"
+        self.name = "a cookie"
+        self.description = "A chocolate chip cookie."
+
+        self.used_text = "You hand over the cookie to the janitor. He seems satisfied now and lets you be."
+
+    #This function occurs when the user tries to use the cookie without being confronted by the janitor.
+    def Use_Item(self, current_room = None, inventory = None):
+        print("Looks tasty! But you are not hungry.")
