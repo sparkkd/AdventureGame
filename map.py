@@ -10,9 +10,8 @@ room_reception.exits["west"] = "Middle staircase"
 room_reception.locked["east"] = True
 room_reception.locked["north"] = True
 room_reception.description = """You are in a long winding corridor wth a large desk infront of you.
-Next to you is the main reception. Behind reception is dark. The door 
-leading to behind the desk is locked but you see a small scanner next to 
-the handle. Behind you is a dark staircase leading up and down."""
+Next to you is the main reception. Behind reception is dark. You can't see much apart from files and
+records. There must be something in here that is useful."""
 room_reception.items = [items.Item_Trevithick_Keys()]
 
 room_admins = Room()
@@ -21,26 +20,24 @@ room_admins.exits["east"] = "Middle staircase"
 room_admins.description = """You come to a small green door with a small circular window near the top. 
 Next to the door a sign reads "Admins Room". Inside you can see the admins large
 desk. The computer on the desk seems to be on as a small green light illuminates the
-smooth wooden surface. The outline of other objects on the desk are barely visable
-in the dark, but you can just about make out a large mug on the desk and a large book."""
+smooth wooden surface. in the top draw of the desk there is a blank keycard. What is this for?"""
 room_admins.items = [items.Item_Blank_Keycard()]
 
 room_trevithick = Room()
 room_trevithick.name = "the Trevithick lecture room"
 room_trevithick.exits["south"] = "Reception"
-room_trevithick.description = """You approach the large wooden double doors of the T2.09 lecture room. You push on 
-the door but it does not budge. The inside is pitch black. A key hole resides on the 
-door."""
+room_trevithick.description = """Inside the trevithick theatre is just how you remember it.
+you notice there is a small laptop at the back of the room on one of the desks.
+Why is that here?"""
 room_trevithick.items = [items.Item_Laptop()]
 
 room_labs = Room()
 room_labs.name = "the computer labs"
 room_labs.exits["west"] = "Reception"
 room_labs.description = """The labs are quiet and dark. You can see the computers and chairs all sitting still
-as the wind whistles outside. You can see one of the pannels in the room has been left 
-standing upright in the middle of the room, and a small backpack resides on the window 
-sill. The door is locked as usual, but you remember that it is opened by a swift swipe 
-of your student ID card on the black sensor to the left of the door."""
+as the wind whistles outside. One of the pannels in the room has been left standing upright
+in the middle of the room, and a small backpack resides on the window sill. You also notice a small box with a
+bulb on top of it"""
 room_labs.items = [items.Item_Projector_Bulb()]
 
 room_n407 = Room()
@@ -54,9 +51,9 @@ one of the chairs."""
 room_janitor = Room()
 room_janitor.name = "the janitor's room"
 room_janitor.exits["east"] = "Outside"
-room_janitor.description = """The janitor's room door is locked shut and won't budge. Through the small fogged up window
-you can see only darkness apart from the light switch on the wall and a large mop in the near 
-corner."""
+room_janitor.description = """The janitor's shed is old and dirty. You manage to squeeze in through the small rusted
+door. You see many different tools and materials, but your eye is caught by a pair of large iron bolt cutters. These
+might be useful."""
 room_janitor.items = [items.Item_Cutters()]
 
 room_outside = Room()
