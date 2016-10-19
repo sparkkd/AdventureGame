@@ -180,4 +180,12 @@ def Execute_Look(user_input):
         if not found:
             print("\nYou can't look at that.\n")
 if __name__ == "__main__":
+
+    print("╦ ╦┌─┐┬  ┌─┐┌─┐┌┬┐┌─┐  ┌┬┐┌─┐")
+    print("║║║├┤ │  │  │ ││││├┤    │ │ │")
+    print("╚╩╝└─┘┴─┘└─┘└─┘┴ ┴└─┘   ┴ └─┘")
+    print("╔═╗┬ ┬┌┬┐┬ ┬┌─┐┌┐┌  ╔═╗┌─┐┌─┐┌─┐┌─┐┬ ┬┌┬┐")
+    print("╠═╝└┬┘ │ ├─┤│ ││││  ╠═╝├─┤└─┐└─┐│ ││ │ │ ")
+    print("╩   ┴  ┴ ┴ ┴└─┘┘└┘  ╩  ┴ ┴└─┘└─┘└─┘└─┘ ┴ ")
+    print("")
     Game()
