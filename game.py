@@ -119,7 +119,7 @@ def Execute_Drop(user_input):
                 player.inventory.remove(item)
 
         if not found:
-            print("You can't drop that!")
+            print("\nYou can't drop that!\n")
 
 #Allows the player to take items
 def Execute_Take(user_input):
@@ -134,17 +134,20 @@ def Execute_Take(user_input):
             
             if item.id == user_input:
                 found = True
+                if len(player.inventory) < 4:
+                        player.inventory.append(item)
+                        player.current_room.items.remove(item)
 
-                player.inventory.append(item)
-                player.current_room.items.remove(item)
+                elif len(player.inventory) >= 4:
+                        print("Your inventory is full.")
 
         if not found:
-            print("You can't take that!")
+            print("\nYou can't take that!\n")
 
 #allows the player to use items to unlock doors
 def Execute_Use(user_input):
     if len(user_input) <= 1:
-        print("Use what?")
+        print("\nUse what?\n")
     else:
         user_input = " ".join(user_input[1:])
 
@@ -157,12 +160,12 @@ def Execute_Use(user_input):
                 item.Use_Item(player.current_room, player.inventory)
 
         if not found:
-            print("You can't use that.")
+            print("\nYou can't use that.\n")
 
 #Allows the player to look at items in the inventory
 def Execute_Look(user_input):
     if len(user_input) <= 1:
-        print("Look at what?")
+        print("\nLook at what?\n")
     else:
         user_input = " ".join(user_input[1:])
 
@@ -175,6 +178,6 @@ def Execute_Look(user_input):
                 print(item.description)
 
         if not found:
-            print("You can't look at that.")
+            print("\nYou can't look at that.\n")
 if __name__ == "__main__":
     Game()
