@@ -1,5 +1,6 @@
 words_to_remove = ["at", "please"]
 
+#This function takes the user input, filter it then return it.
 def Parse_Input(user_input):
     output = ""
 

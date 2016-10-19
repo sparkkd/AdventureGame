@@ -6,6 +6,8 @@ import player
 # location : player, opens labs
 
 class Item_ID(Item):
+
+    #This is a constructor that initializes the object (id) for the Item_ID class
     def __init__(self):
         Item.__init__(self)
 
@@ -15,7 +17,8 @@ class Item_ID(Item):
 
         self.room_used_in = "reception"
         self.used_text = "You swipe your ID. The computer labs is now open."
-
+        
+    #This function checks if you are able to use your ID in you current room.
     def Use_Item(self, current_room = None, inventory = None):
         if current_room.name.lower() == self.room_used_in and current_room.locked["east"] != False:
             print(self.used_text)
@@ -26,6 +29,8 @@ class Item_ID(Item):
 # location : player, shows a map of the university
 
 class Item_Handbook(Item):
+
+    #This is a constructor that initializes the object (handbook) for the Item_Handbook class
     def __init__(self):
         Item.__init__(self)
 
@@ -34,7 +39,8 @@ class Item_Handbook(Item):
         self.description = "This student handbook has maps for all over the university."
 
         self.used_text = ""
-
+        
+    #This function occurs when the player uses his handbook
     def Use_Item(self, current_room = None, inventory = None):
         print("You flip through the handbook. Yep, you already knew all of this.")
 
@@ -42,6 +48,8 @@ class Item_Handbook(Item):
 # location : N4.07, gained when projector fixed. opens safe.
 
 class Item_Reception_Safe_Keys(Item):
+    
+    #This is a constructor that initializes the object (reception keys) for the Item_Reception_Safe_Keys class.
     def __init__(self):
         Item.__init__(self)
 
@@ -52,6 +60,7 @@ class Item_Reception_Safe_Keys(Item):
         self.used_text = "You input the code in to the reception safe. You gain a set of keys."
         self.room_used_in = "reception"
 
+    #This function occres when the user uses the reception keys.
     def Use_Item(self, current_room = None, inventory = None):
         has_safe_location = False
 
@@ -72,6 +81,8 @@ class Item_Reception_Safe_Keys(Item):
 # location : labs, fixes projector
 
 class Item_Projector_Bulb(Item):
+    
+    #This is a constructor that initializes the object (Projector Blub) for the Item_Projector_Bulb class.
     def __init__(self):
         Item.__init__(self)
 
@@ -81,7 +92,8 @@ class Item_Projector_Bulb(Item):
 
         self.used_text = "You change the projector bulb and a code displays on the screen. You write it down."
         self.room_used_in = "room n4.07"
-
+        
+    #This function occurs when the user uses the projector in the right room, otherwise it returns a false message.
     def Use_Item(self, current_room = None, inventory = None):
         if current_room.name.lower() == self.room_used_in:
             print(self.used_text)
@@ -94,6 +106,8 @@ class Item_Projector_Bulb(Item):
 # location : admin, opens reception
 
 class Item_Blank_Keycard(Item):
+
+    #This is a constructor that initializes the object (blank keycard) for the Item_Blank_Keycard class.
     def __init__(self):
         Item.__init__(self)
 
@@ -103,7 +117,8 @@ class Item_Blank_Keycard(Item):
 
         self.used_text = "You use the keycard. The door to reception is now open!"
         self.room_used_in = "the staircase on floor 1"
-
+        
+    #This function happens when the blank keycard is being used by the player.
     def Use_Item(self, current_room = None, inventory = None):
         if current_room.name.lower() == self.room_used_in and current_room.locked["east"] != False:
             print(self.used_text)
@@ -115,6 +130,8 @@ class Item_Blank_Keycard(Item):
 # location : reception, opens trevithick lecture room
 
 class Item_Trevithick_Keys(Item):
+
+    #This is a constructor that initializes the object (trevithick keys) for the Item_Trevithick_Keys class.
     def __init__(self):
         Item.__init__(self)
 
@@ -124,7 +141,8 @@ class Item_Trevithick_Keys(Item):
 
         self.used_text = "You open the Trevithick lecture theatre. Sweet!"
         self.room_used_in = "reception"
-
+        
+    #This function occures when the trevithick keys is being used by the player.
     def Use_Item(self, current_room = None, inventory = None):
         if current_room.name.lower() == self.room_used_in and current_room.locked["north"] != False:
             print(self.used_text)
@@ -136,6 +154,8 @@ class Item_Trevithick_Keys(Item):
 # location : reception, opens main entrance
 
 class Item_Exit_Keys(Item):
+
+    #This is a constructor that initializes the object (exit keys) for the Item_Exit_Keys class.
     def __init__(self):
         Item.__init__(self)
 
@@ -145,7 +165,8 @@ class Item_Exit_Keys(Item):
 
         self.used_text = "You unlock the entrance door."
         self.room_used_in = "the main entrance"
-
+        
+    #This function occures when the exit keys is being used by the player.
     def Use_Item(self, current_room = None, inventory = None):
         if current_room.name.lower() == self.room_used_in and current_room.locked["north"] != False:
             print(self.used_text)
@@ -158,6 +179,8 @@ class Item_Exit_Keys(Item):
 # location : trevithick, shows location of reception keys
 
 class Item_Laptop(Item):
+
+    #This is a constructor that initializes the object (laptop) for the Item_Laptop class.
     def __init__(self):
         Item.__init__(self)
 
@@ -167,6 +190,7 @@ class Item_Laptop(Item):
 
         self.used_text = "You look at the laptop. It shows the location of a hidden safe in reception. Not very secure, is it?"
 
+    #This function occures when the laptop is being used by the player.
     def Use_Item(self, current_room = None, inventory = None):
         if Item_Reception_Safe_Location not in inventory:
             print(self.used_text)
@@ -178,6 +202,8 @@ class Item_Laptop(Item):
 # location : janitor's shed, opens outside gates
 
 class Item_Cutters(Item):
+
+    #This is a constructor that initializes the object (bolt cutters) for the Item_Cutters class.
     def __init__(self):
         Item.__init__(self)
 
@@ -188,7 +214,8 @@ class Item_Cutters(Item):
         self.used_text = "You cut the lock off the gate. Freedom!"
         self.room_used_in = "outside the entrance"
         self.used = False
-
+        
+    #This function occures when the bolt cutters is being used by the player.
     def Use_Item(self, current_room = None, inventory = None):
         if current_room.name.lower() == self.room_used_in:
             print(self.used_text)
