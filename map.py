@@ -1,5 +1,6 @@
 from items import *
 from classes import Room
+from random import randint
 import items
 
 #Declaring Reception as a Room object. 
@@ -128,3 +129,31 @@ rooms = {
     "Middle staircase": room_staircase_middle,
     "Ground staircase": room_staircase_ground
 }
+
+#This is used to validate any "go" user inputs so no error is thrown
+directions = [
+    "north",
+    "south",
+    "east",
+    "west",
+    "up",
+    "down"
+]
+
+#These rooms are the only rooms with the possibility of finding a cookie inside
+cookierooms = [ 
+    room_reception,
+    room_admins,
+    room_trevithick,
+    room_labs,
+    room_janitor,
+    room_entrance,
+    room_staircase_top,
+    room_staircase_middle,
+    room_staircase_ground
+]
+
+#Adding a cookie to one of the 6 selected rooms
+rand = randint(0,8)
+cookierooms[rand].items.append(items.Item_Cookie())
+cookieRoom = cookierooms[rand]
